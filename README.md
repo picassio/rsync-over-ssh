@@ -24,14 +24,14 @@
 **Original**
 
 ```sh
-rsync -aHAXxv --numeric-ids --delete --progress -e "ssh -T -c arcfour -o Compression=no -x" user@<source>:<source_dir> <dest_dir>
+rsync -aHAXxvP --numeric-ids -e "ssh -T -c arcfour -o Compression=no -x" user@<source>:<source_dir> <dest_dir>
 ```
 
 
 **Flip** 
 
 ```sh
-rsync -aHAXxv --numeric-ids --delete --progress -e "ssh -T -c arcfour -o Compression=no -x" [source_dir] [dest_host:/dest_dir]
+rsync -aHAXxvP --numeric-ids -e "ssh -T -c arcfour -o Compression=no -x" [source_dir] [dest_host:/dest_dir]
 ```
 
 for a Mac to Linux transfer it's useful to use other options. Arcfour is not available for most new machines anymore and UTF-8 on OS X is different than UTF-8 on Linux (important if you have Umlauts like Germans, Samba/NFS will fail otherwise). My command if both (Mac & Linux) machines support AES on their processors and you want to transfer from Mac to Linux:
