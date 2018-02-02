@@ -60,3 +60,5 @@ Since -c arcfour is considered obsolete, using -c aes128-gcm@openssh.com is prob
 rsync -aHAXxv --numeric-ids --delete --progress -e "ssh -T -c aes128-gcm@openssh.com -o Compression=no -x" [source_directory] user@hostname:[target_directory]/
 
 See these encryption benchmark results: https://famzah.files.wordpress.com/2015/06/openssh-ciphers-performance-2015-chart.jpg
+
+yo
